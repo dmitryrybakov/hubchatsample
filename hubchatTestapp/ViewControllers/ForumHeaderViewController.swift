@@ -52,6 +52,7 @@ class ForumHeaderViewController: UIViewController, RZTransitionInteractionContro
         self.view.backgroundColor = UIColor.red
         
         self.showForumButton.setTitle("Test Button", for: .normal)
+        self.showForumButton.isHidden = true
         
         self.titleLabel.textAlignment = .center
         self.titleLabel.font = UIFont.systemFont(ofSize: 48.0)
@@ -101,6 +102,8 @@ class ForumHeaderViewController: UIViewController, RZTransitionInteractionContro
         
         self.showForumButton.addTarget(self.viewModel, action: Selector(("showForumInfo")), for: .touchUpInside)
         
+        self.viewModel.updateForumInfo()
+        
         pushPopInteractionController = RZHorizontalInteractionController()
         if let vc = pushPopInteractionController as? RZHorizontalInteractionController {
             vc.nextViewControllerDelegate = self
@@ -122,7 +125,8 @@ class ForumHeaderViewController: UIViewController, RZTransitionInteractionContro
     }
     
     func nextSimpleViewController() -> UIViewController {
-        let newVC = ForumHeaderViewController()
+        let newVC = PostsViewController()
+        newVC.viewModel = self.viewModel
         newVC.transitioningDelegate = RZTransitionsManager.shared()
         return newVC
     }

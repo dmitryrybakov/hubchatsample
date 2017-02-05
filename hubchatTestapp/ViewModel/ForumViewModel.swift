@@ -21,7 +21,8 @@ protocol ForumViewModelProtocol: class {
     
     init(forumHeader:ForumHeaderModel, posts: [PostModel])
     
-    func showForumInfo()
+    func updateForumInfo()
+    func updatePostsInfo()
 }
 
 
@@ -53,14 +54,9 @@ class ForumViewModel : ForumViewModelProtocol {
         self.postsModel = posts
     }
     
-    @objc func showForumInfo() {
+    @objc func updateForumInfo() {
         
         Alamofire.request("https://api.hubchat.com/v1/forum/photography").responseJSON { response in
-            
-            print(response.request ?? "empty")  // original URL request
-            print(response.response ?? "empty") // HTTP URL response
-            print(response.data ?? "empty")     // server data
-            print(response.result)   // result of response serialization
             
             if let JSON = response.result.value as? Dictionary<String, AnyObject> {
                 
@@ -75,6 +71,49 @@ class ForumViewModel : ForumViewModelProtocol {
                 
                 self.forumData = (title: title, description: description,
                                   logoURLString:logoURLString, imageURLString:headerImageURLString)
+            }
+        }
+    }
+    
+    @objc func updatePostsInfo() {
+        
+        Alamofire.request("https://api.hubchat.com/v1/forum/photography/post").responseJSON { response in
+            
+            if let JSON = response.result.value as? Dictionary<String, AnyObject> {
+                
+                var posts: [(postText:String, imageURLStrings:[String], upvotes: Float,
+                              user:(username:String, avatarURLString:String))] = []
+                var postsModel:[PostModel] = []
+                
+                let postsJSON = JSON.getValue(forKeyPath: ["posts"])
+                
+                for postObject in (postsJSON as? [Dictionary<String, AnyObject>])! {
+                    
+                    let postText = postObject.getValue(forKeyPath: ["rawContent"]) as? String ?? ""
+                    let upVotes = postObject.getValue(forKeyPath: ["stats", "upVotes"]) as? Float ?? 0.0
+                    let avatarURLString = postObject.getValue(forKeyPath: ["createdBy", "avatar", "url"]) as? String ?? ""
+                    let username = postObject.getValue(forKeyPath: ["createdBy", "username"]) as? String ?? ""
+                    let imagesObject = postObject.getValue(forKeyPath: ["entities", "images"])
+                    
+                    var imagesURLStringArray = [String]()
+                    for imageObject in (imagesObject as? [Dictionary<String, AnyObject>])! {
+                        
+                        if let URLString = imageObject.getValue(forKeyPath: ["cdnUrl"]) as? String {
+                        
+                            imagesURLStringArray.append(URLString)
+                        }
+                    }
+                    
+                    posts.append((postText: postText, imageURLStrings:imagesURLStringArray,
+                                  upvotes:upVotes, (username:username, avatarURLString:avatarURLString)))
+                    postsModel.append(PostModel(postText: postText, imageURLStrings: imagesURLStringArray,
+                                                upvotes: upVotes, user: UserModel(userName: username, avatarURLString: avatarURLString)))
+                }
+                
+                if posts.count > 0 {
+                    self.postsModel = postsModel
+                    self.postsData = posts
+                }
             }
         }
     }
