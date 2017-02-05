@@ -9,6 +9,11 @@
 import Foundation
 import Alamofire
 
+enum ServerURLAPIConstants {
+    static let forumURLString = "https://api.hubchat.com/v1/forum/photography"
+    static let postsURLString = "https://api.hubchat.com/v1/forum/photography/post"
+}
+
 protocol ForumViewModelProtocol: class {
     
     var forumData:(title: String, description: String, logoURLString:String, imageURLString:String)? { get }
@@ -54,7 +59,7 @@ class ForumViewModel : ForumViewModelProtocol {
     
     @objc func updateForumInfo() {
         
-        Alamofire.request("https://api.hubchat.com/v1/forum/photography").responseJSON { response in
+        Alamofire.request(ServerURLAPIConstants.forumURLString).responseJSON { response in
             
             if let JSON = response.result.value as? Dictionary<String, AnyObject> {
                 
@@ -75,7 +80,7 @@ class ForumViewModel : ForumViewModelProtocol {
     
     @objc func updatePostsInfo() {
         
-        Alamofire.request("https://api.hubchat.com/v1/forum/photography/post").responseJSON { response in
+        Alamofire.request(ServerURLAPIConstants.postsURLString).responseJSON { response in
             
             if let JSON = response.result.value as? Dictionary<String, AnyObject> {
                 
@@ -93,7 +98,7 @@ class ForumViewModel : ForumViewModelProtocol {
                     let username = postObject.getValue(forKeyPath: ["createdBy", "username"]) as? String ?? ""
                     let imagesObject = postObject.getValue(forKeyPath: ["entities", "images"])
                     
-                    var imagesURLStringArray = [String]()
+                    var imagesURLStringArray:[String] = []
                     for imageObject in (imagesObject as? [Dictionary<String, AnyObject>])! {
                         
                         if let URLString = imageObject.getValue(forKeyPath: ["cdnUrl"]) as? String {

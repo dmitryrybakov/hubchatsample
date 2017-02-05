@@ -70,10 +70,12 @@ class PostsViewController: UITableViewController {
                     Alamofire.request(imageURLString).responseImage { response in
                         debugPrint(response.result)
                         
-                        if response.request?.url?.absoluteString == imageURLString  {
-                            if let image = response.result.value {
-                                let filter = AspectScaledToFillSizeCircleFilter(size: cell.avatarImageView.bounds.size)
-                                cell.avatarImageView.image = filter.filter(image)
+                        if let request = response.request {
+                            if request.url?.absoluteString == imageURLString  {
+                                if let image = response.result.value {
+                                    let filter = AspectScaledToFillSizeCircleFilter(size: cell.avatarImageView.bounds.size)
+                                    cell.avatarImageView.image = filter.filter(image)
+                                }
                             }
                         }
                     }
