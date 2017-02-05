@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		D4565C81CA08898464A76FC3 /* Pods_hubchatTestapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAF6FA87CDBEB527B837427 /* Pods_hubchatTestapp.framework */; };
+		F709466C1E478385006CA5DD /* DictionaryDeeplyNestedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70946681E478385006CA5DD /* DictionaryDeeplyNestedExtension.swift */; };
+		F709466D1E478385006CA5DD /* TranslucentNavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70946691E478385006CA5DD /* TranslucentNavBarExtension.swift */; };
+		F709466E1E478385006CA5DD /* ForumHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709466B1E478385006CA5DD /* ForumHeaderViewController.swift */; };
+		F70946701E4783B6006CA5DD /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709466F1E4783B6006CA5DD /* PostsViewController.swift */; };
+		F70946721E4783CA006CA5DD /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70946711E4783CA006CA5DD /* PostsTableViewCell.swift */; };
 		F7AA84601E451AB800D593DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA845F1E451AB800D593DC /* AppDelegate.swift */; };
-		F7AA84621E451AB800D593DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA84611E451AB800D593DC /* ViewController.swift */; };
-		F7AA84651E451AB800D593DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AA84631E451AB800D593DC /* Main.storyboard */; };
 		F7AA84671E451AB800D593DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7AA84661E451AB800D593DC /* Assets.xcassets */; };
 		F7AA846A1E451AB800D593DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AA84681E451AB800D593DC /* LaunchScreen.storyboard */; };
+		F7AA847B1E452CA100D593DC /* ForumHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA84781E452CA100D593DC /* ForumHeaderModel.swift */; };
+		F7AA847C1E452CA100D593DC /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA84791E452CA100D593DC /* PostModel.swift */; };
+		F7AA847D1E452CA100D593DC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA847A1E452CA100D593DC /* UserModel.swift */; };
+		F7AA84821E45360200D593DC /* ForumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA84811E45360200D593DC /* ForumViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A61258959B3A93635F84688 /* Pods-hubchatTestapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hubchatTestapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hubchatTestapp/Pods-hubchatTestapp.debug.xcconfig"; sourceTree = "<group>"; };
 		53FC8ABCB27F9B04D2BDB71D /* Pods-hubchatTestapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hubchatTestapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-hubchatTestapp/Pods-hubchatTestapp.release.xcconfig"; sourceTree = "<group>"; };
 		EEAF6FA87CDBEB527B837427 /* Pods_hubchatTestapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hubchatTestapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70946681E478385006CA5DD /* DictionaryDeeplyNestedExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryDeeplyNestedExtension.swift; sourceTree = "<group>"; };
+		F70946691E478385006CA5DD /* TranslucentNavBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslucentNavBarExtension.swift; sourceTree = "<group>"; };
+		F709466B1E478385006CA5DD /* ForumHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumHeaderViewController.swift; sourceTree = "<group>"; };
+		F709466F1E4783B6006CA5DD /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		F70946711E4783CA006CA5DD /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA845C1E451AB800D593DC /* hubchatTestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hubchatTestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AA845F1E451AB800D593DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7AA84611E451AB800D593DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F7AA84641E451AB800D593DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7AA84661E451AB800D593DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7AA84691E451AB800D593DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7AA846B1E451AB800D593DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7AA84781E452CA100D593DC /* ForumHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumHeaderModel.swift; sourceTree = "<group>"; };
+		F7AA84791E452CA100D593DC /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		F7AA847A1E452CA100D593DC /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F7AA84811E45360200D593DC /* ForumViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +63,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F70946671E478385006CA5DD /* UtilsExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F70946681E478385006CA5DD /* DictionaryDeeplyNestedExtension.swift */,
+				F70946691E478385006CA5DD /* TranslucentNavBarExtension.swift */,
+			);
+			path = UtilsExtensions;
+			sourceTree = "<group>";
+		};
+		F709466A1E478385006CA5DD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F709466B1E478385006CA5DD /* ForumHeaderViewController.swift */,
+				F709466F1E4783B6006CA5DD /* PostsViewController.swift */,
+				F70946711E4783CA006CA5DD /* PostsTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F7AA84531E451AB800D593DC = {
 			isa = PBXGroup;
 			children = (
@@ -70,15 +103,36 @@
 		F7AA845E1E451AB800D593DC /* hubchatTestapp */ = {
 			isa = PBXGroup;
 			children = (
+				F70946671E478385006CA5DD /* UtilsExtensions */,
+				F7AA84771E452CA100D593DC /* Model */,
+				F7AA84801E45360200D593DC /* ViewModel */,
+				F709466A1E478385006CA5DD /* ViewControllers */,
 				F7AA845F1E451AB800D593DC /* AppDelegate.swift */,
-				F7AA84611E451AB800D593DC /* ViewController.swift */,
-				F7AA84631E451AB800D593DC /* Main.storyboard */,
 				F7AA84661E451AB800D593DC /* Assets.xcassets */,
 				F7AA84681E451AB800D593DC /* LaunchScreen.storyboard */,
 				F7AA846B1E451AB800D593DC /* Info.plist */,
 			);
 			path = hubchatTestapp;
 			sourceTree = "<group>";
+		};
+		F7AA84771E452CA100D593DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA84781E452CA100D593DC /* ForumHeaderModel.swift */,
+				F7AA84791E452CA100D593DC /* PostModel.swift */,
+				F7AA847A1E452CA100D593DC /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F7AA84801E45360200D593DC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA84811E45360200D593DC /* ForumViewModel.swift */,
+			);
+			name = ViewModel;
+			path = hubchatTestapp/ViewModel;
+			sourceTree = SOURCE_ROOT;
 		};
 		F89A56562493496C400A3AAC /* Frameworks */ = {
 			isa = PBXGroup;
@@ -153,7 +207,6 @@
 			files = (
 				F7AA846A1E451AB800D593DC /* LaunchScreen.storyboard in Resources */,
 				F7AA84671E451AB800D593DC /* Assets.xcassets in Resources */,
-				F7AA84651E451AB800D593DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,22 +265,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7AA84621E451AB800D593DC /* ViewController.swift in Sources */,
+				F7AA84821E45360200D593DC /* ForumViewModel.swift in Sources */,
+				F7AA847C1E452CA100D593DC /* PostModel.swift in Sources */,
 				F7AA84601E451AB800D593DC /* AppDelegate.swift in Sources */,
+				F70946701E4783B6006CA5DD /* PostsViewController.swift in Sources */,
+				F709466E1E478385006CA5DD /* ForumHeaderViewController.swift in Sources */,
+				F7AA847D1E452CA100D593DC /* UserModel.swift in Sources */,
+				F7AA847B1E452CA100D593DC /* ForumHeaderModel.swift in Sources */,
+				F70946721E4783CA006CA5DD /* PostsTableViewCell.swift in Sources */,
+				F709466C1E478385006CA5DD /* DictionaryDeeplyNestedExtension.swift in Sources */,
+				F709466D1E478385006CA5DD /* TranslucentNavBarExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F7AA84631E451AB800D593DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7AA84641E451AB800D593DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F7AA84681E451AB800D593DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -339,6 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8LLHRX2QSM;
 				INFOPLIST_FILE = hubchatTestapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.testapp.hubchatTestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8LLHRX2QSM;
 				INFOPLIST_FILE = hubchatTestapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.testapp.hubchatTestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,6 +434,7 @@
 				F7AA84701E451AB800D593DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

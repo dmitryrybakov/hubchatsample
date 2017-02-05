@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RZTransitions
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let initialViewController = ForumHeaderViewController()
+        let rootNavController = RZTransitionsNavigationController(rootViewController: initialViewController)
+        
+        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
+        
+        let userModel = UserModel(userName: "Avalon", avatarURLString: "http://gooogle.com")
+        let headerModel = ForumHeaderModel(title: "HeaderOne", description: "Title", logoURLString: "http://google.com", imageURLString: "http://google.com")
+        let postModel = PostModel(postText: "", imageURLStrings: [], upvotes: 0.0, user: userModel)
+        let viewModel = ForumViewModel(forumHeader: headerModel, posts: [postModel])
+        
+        initialViewController.viewModel = viewModel
+        
+        self.window?.rootViewController = rootNavController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
