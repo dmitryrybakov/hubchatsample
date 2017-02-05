@@ -7,6 +7,7 @@ def common_pods
     pod 'SnapKit', '~> 3.1.2'
     pod 'AlamofireImage', '~> 3.2'
     pod 'RZTransitions', '~> 1.2.1'
+    pod 'MWPhotoBrowser', '~> 2.1.2'
 end
 
 target :'hubchatTestapp' do

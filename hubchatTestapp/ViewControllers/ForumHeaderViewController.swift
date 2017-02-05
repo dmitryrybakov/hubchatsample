@@ -49,7 +49,6 @@ class ForumHeaderViewController: UIViewController, RZTransitionInteractionContro
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view = UIView(frame:CGRect.zero)
-        self.view.backgroundColor = UIColor.red
         
         self.showForumButton.setTitle("Test Button", for: .normal)
         self.showForumButton.isHidden = true

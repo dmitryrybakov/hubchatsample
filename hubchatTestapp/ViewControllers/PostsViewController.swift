@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 import Alamofire
 import AlamofireImage
+import MWPhotoBrowser
 
-class PostsViewController: UITableViewController {
+class PostsViewController: UITableViewController, MWPhotoBrowserDelegate {
     
     static let kPostsTableViewCellIdentifier = "kPostsTableViewCellIdentifier"
+    var imageURLStrings:[String] = []
     
     var viewModel: ForumViewModelProtocol! {
         didSet {
@@ -60,17 +62,55 @@ class PostsViewController: UITableViewController {
                 cell.userNameLabel.text = pd.user.username
                 cell.upVotesLabel.text = String(pd.upvotes)
                 
-                Alamofire.request(pd.user.avatarURLString).responseImage { response in
-                    debugPrint(response.result)
+                
+                if !pd.user.avatarURLString.isEmpty {
+                
+                    let imageURLString = pd.user.avatarURLString
                     
-                    if let image = response.result.value {
-                        let filter = AspectScaledToFillSizeCircleFilter(size: cell.avatarImageView.bounds.size)
-                        cell.avatarImageView.image = filter.filter(image)
+                    Alamofire.request(imageURLString).responseImage { response in
+                        debugPrint(response.result)
+                        
+                        if response.request?.url?.absoluteString == imageURLString  {
+                            if let image = response.result.value {
+                                let filter = AspectScaledToFillSizeCircleFilter(size: cell.avatarImageView.bounds.size)
+                                cell.avatarImageView.image = filter.filter(image)
+                            }
+                        }
                     }
                 }
             }
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let postsData = self.viewModel.postsData {
+            if postsData.count > indexPath.row {
+
+                let pd = postsData[indexPath.row]
+                self.imageURLStrings = pd.imageURLStrings
+
+                let gallery = MWPhotoBrowser()
+                gallery.delegate = self
+                
+                self.navigationController?.pushViewController(gallery, animated: true)
+            }
+        }
+    }
+    
+    func photoBrowser(_ photoBrowser: MWPhotoBrowser!, photoAt index: UInt) -> MWPhotoProtocol! {
+        if UInt(self.imageURLStrings.count) > index {
+            let photo = MWPhoto(url: URL(string: self.imageURLStrings[Int(index)]))
+            return photo
+        }
+        return MWPhoto()
+    }
+    
+    func numberOfPhotos(in photoBrowser: MWPhotoBrowser!) -> UInt {
+        return UInt(self.imageURLStrings.count)
     }
 }
