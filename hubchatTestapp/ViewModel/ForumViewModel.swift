@@ -9,8 +9,6 @@
 import Foundation
 import Alamofire
 
-
-
 protocol ForumViewModelProtocol: class {
     
     var forumData:(title: String, description: String, logoURLString:String, imageURLString:String)? { get }

@@ -12,7 +12,7 @@ import Alamofire
 import AlamofireImage
 import MWPhotoBrowser
 
-class PostsViewController: UITableViewController, MWPhotoBrowserDelegate {
+class PostsViewController: UITableViewController {
     
     static let kPostsTableViewCellIdentifier = "kPostsTableViewCellIdentifier"
     var imageURLStrings:[String] = []
@@ -101,6 +101,9 @@ class PostsViewController: UITableViewController, MWPhotoBrowserDelegate {
             }
         }
     }
+}
+
+extension PostsViewController: MWPhotoBrowserDelegate {
     
     func photoBrowser(_ photoBrowser: MWPhotoBrowser!, photoAt index: UInt) -> MWPhotoProtocol! {
         if UInt(self.imageURLStrings.count) > index {

@@ -13,7 +13,7 @@ import AlamofireImage
 import RZTransitions
 
 @objc(ForumHeaderViewController)
-class ForumHeaderViewController: UIViewController, RZTransitionInteractionControllerDelegate {
+class ForumHeaderViewController: UIViewController {
     
     let showForumButton = UIButton()
     let logoImageView = UIImageView()
@@ -117,11 +117,9 @@ class ForumHeaderViewController: UIViewController, RZTransitionInteractionContro
             nc.navigationBar.transparentNavigationBar()
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+}
+
+extension ForumHeaderViewController: RZTransitionInteractionControllerDelegate {
     
     func nextSimpleViewController() -> UIViewController {
         let newVC = PostsViewController()
