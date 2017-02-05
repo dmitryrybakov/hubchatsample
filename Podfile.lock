@@ -1,12 +1,22 @@
 PODS:
   - Alamofire (4.3.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - RZTransitions (1.2.1)
+  - SnapKit (3.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
+  - AlamofireImage (~> 3.2)
+  - RZTransitions (~> 1.2.1)
+  - SnapKit (~> 3.1.2)
 
 SPEC CHECKSUMS:
   Alamofire: e7d196a2fe4add894ad782cf7fcdf14182be17c4
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
 
-PODFILE CHECKSUM: d0ae26095ea46a0fc7bb863b8b472278b3ceb1ce
+PODFILE CHECKSUM: 98b913b23e229b325b9c3b04f96713edf9a39f4b
 
 COCOAPODS: 1.2.0
