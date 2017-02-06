@@ -54,6 +54,8 @@ class ForumViewModel : ForumViewModelProtocol {
     
     required init(forumHeader:ForumHeaderModel, posts: [PostModel]) {
         self.forumHeaderModel = forumHeader
+        self.forumData = (title: forumHeader.title, description: forumHeader.description,
+                          logoURLString:forumHeader.logoURLString, imageURLString:forumHeader.imageURLString)
         self.postsModel = posts
     }
     

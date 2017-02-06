@@ -13,6 +13,7 @@
 		F709466E1E478385006CA5DD /* ForumHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709466B1E478385006CA5DD /* ForumHeaderViewController.swift */; };
 		F70946701E4783B6006CA5DD /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709466F1E4783B6006CA5DD /* PostsViewController.swift */; };
 		F70946721E4783CA006CA5DD /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70946711E4783CA006CA5DD /* PostsTableViewCell.swift */; };
+		F7502AC51E485E4D00ABDF6C /* hubchatTestappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7502AC41E485E4D00ABDF6C /* hubchatTestappTests.swift */; };
 		F7AA84601E451AB800D593DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA845F1E451AB800D593DC /* AppDelegate.swift */; };
 		F7AA84671E451AB800D593DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7AA84661E451AB800D593DC /* Assets.xcassets */; };
 		F7AA846A1E451AB800D593DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AA84681E451AB800D593DC /* LaunchScreen.storyboard */; };
@@ -21,6 +22,16 @@
 		F7AA847D1E452CA100D593DC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA847A1E452CA100D593DC /* UserModel.swift */; };
 		F7AA84821E45360200D593DC /* ForumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA84811E45360200D593DC /* ForumViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7502AC71E485E4D00ABDF6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7AA84541E451AB800D593DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7AA845B1E451AB800D593DC;
+			remoteInfo = hubchatTestapp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1A61258959B3A93635F84688 /* Pods-hubchatTestapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hubchatTestapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hubchatTestapp/Pods-hubchatTestapp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -31,6 +42,9 @@
 		F709466B1E478385006CA5DD /* ForumHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumHeaderViewController.swift; sourceTree = "<group>"; };
 		F709466F1E4783B6006CA5DD /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		F70946711E4783CA006CA5DD /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		F7502AC21E485E4D00ABDF6C /* hubchatTestappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hubchatTestappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7502AC41E485E4D00ABDF6C /* hubchatTestappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hubchatTestappTests.swift; sourceTree = "<group>"; };
+		F7502AC61E485E4D00ABDF6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7AA845C1E451AB800D593DC /* hubchatTestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hubchatTestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AA845F1E451AB800D593DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7AA84661E451AB800D593DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F7502ABF1E485E4D00ABDF6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7AA84591E451AB800D593DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,10 +103,20 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F7502AC31E485E4D00ABDF6C /* hubchatTestappTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7502AC41E485E4D00ABDF6C /* hubchatTestappTests.swift */,
+				F7502AC61E485E4D00ABDF6C /* Info.plist */,
+			);
+			path = hubchatTestappTests;
+			sourceTree = "<group>";
+		};
 		F7AA84531E451AB800D593DC = {
 			isa = PBXGroup;
 			children = (
 				F7AA845E1E451AB800D593DC /* hubchatTestapp */,
+				F7502AC31E485E4D00ABDF6C /* hubchatTestappTests */,
 				F7AA845D1E451AB800D593DC /* Products */,
 				3B3F216A32BDDB2EBF696CDD /* Pods */,
 				F89A56562493496C400A3AAC /* Frameworks */,
@@ -96,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F7AA845C1E451AB800D593DC /* hubchatTestapp.app */,
+				F7502AC21E485E4D00ABDF6C /* hubchatTestappTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +177,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F7502AC11E485E4D00ABDF6C /* hubchatTestappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7502AC91E485E4D00ABDF6C /* Build configuration list for PBXNativeTarget "hubchatTestappTests" */;
+			buildPhases = (
+				F7502ABE1E485E4D00ABDF6C /* Sources */,
+				F7502ABF1E485E4D00ABDF6C /* Frameworks */,
+				F7502AC01E485E4D00ABDF6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7502AC81E485E4D00ABDF6C /* PBXTargetDependency */,
+			);
+			name = hubchatTestappTests;
+			productName = hubchatTestappTests;
+			productReference = F7502AC21E485E4D00ABDF6C /* hubchatTestappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F7AA845B1E451AB800D593DC /* hubchatTestapp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7AA846E1E451AB800D593DC /* Build configuration list for PBXNativeTarget "hubchatTestapp" */;
@@ -175,6 +225,12 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = hubchat;
 				TargetAttributes = {
+					F7502AC11E485E4D00ABDF6C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8LLHRX2QSM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F7AA845B1E451AB800D593DC;
+					};
 					F7AA845B1E451AB800D593DC = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 384YEV2ZBD;
@@ -196,11 +252,19 @@
 			projectRoot = "";
 			targets = (
 				F7AA845B1E451AB800D593DC /* hubchatTestapp */,
+				F7502AC11E485E4D00ABDF6C /* hubchatTestappTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F7502AC01E485E4D00ABDF6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7AA845A1E451AB800D593DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +325,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F7502ABE1E485E4D00ABDF6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7502AC51E485E4D00ABDF6C /* hubchatTestappTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7AA84581E451AB800D593DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +352,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F7502AC81E485E4D00ABDF6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7AA845B1E451AB800D593DC /* hubchatTestapp */;
+			targetProxy = F7502AC71E485E4D00ABDF6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		F7AA84681E451AB800D593DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -292,6 +372,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F7502ACA1E485E4D00ABDF6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8LLHRX2QSM;
+				INFOPLIST_FILE = hubchatTestappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.testapp.hubchatTestappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hubchatTestapp.app/hubchatTestapp";
+			};
+			name = Debug;
+		};
+		F7502ACB1E485E4D00ABDF6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8LLHRX2QSM;
+				INFOPLIST_FILE = hubchatTestappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.testapp.hubchatTestappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hubchatTestapp.app/hubchatTestapp";
+			};
+			name = Release;
+		};
 		F7AA846C1E451AB800D593DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -418,6 +526,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F7502AC91E485E4D00ABDF6C /* Build configuration list for PBXNativeTarget "hubchatTestappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7502ACA1E485E4D00ABDF6C /* Debug */,
+				F7502ACB1E485E4D00ABDF6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F7AA84571E451AB800D593DC /* Build configuration list for PBXProject "hubchatTestapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
