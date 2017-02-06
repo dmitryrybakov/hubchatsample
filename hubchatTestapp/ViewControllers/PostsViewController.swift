@@ -38,6 +38,14 @@ class PostsViewController: UITableViewController {
         self.tableView.separatorStyle = .none
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let nc = self.navigationController {
+            nc.navigationBar.transparentNavigationBar()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -61,7 +69,7 @@ class PostsViewController: UITableViewController {
                 cell.postTextLabel.text = pd.postText
                 cell.userNameLabel.text = pd.user.username
                 cell.upVotesLabel.text = String(pd.upvotes)
-                
+                cell.avatarImageView.image = UIImage(named: "placeholder-image")
                 
                 if !pd.user.avatarURLString.isEmpty {
                 

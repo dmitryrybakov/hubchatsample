@@ -177,7 +177,7 @@
 				TargetAttributes = {
 					F7AA845B1E451AB800D593DC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8LLHRX2QSM;
+						DevelopmentTeam = 384YEV2ZBD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -390,11 +390,11 @@
 			baseConfigurationReference = 1A61258959B3A93635F84688 /* Pods-hubchatTestapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8LLHRX2QSM;
+				DEVELOPMENT_TEAM = 384YEV2ZBD;
 				INFOPLIST_FILE = hubchatTestapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.testapp.hubchatTestapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.breezy.testapp.hubchatTestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -405,11 +405,11 @@
 			baseConfigurationReference = 53FC8ABCB27F9B04D2BDB71D /* Pods-hubchatTestapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8LLHRX2QSM;
+				DEVELOPMENT_TEAM = 384YEV2ZBD;
 				INFOPLIST_FILE = hubchatTestapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hubchat.testapp.hubchatTestapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.breezy.testapp.hubchatTestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -56,11 +56,15 @@ class ForumHeaderViewController: UIViewController {
         self.titleLabel.textAlignment = .center
         self.titleLabel.font = UIFont.systemFont(ofSize: 48.0)
         self.titleLabel.textColor = .white
+        self.titleLabel.adjustsFontSizeToFitWidth = true
+        self.titleLabel.minimumScaleFactor = 0.5
         self.descriptionLabel.numberOfLines = 0
         self.descriptionLabel.lineBreakMode = .byWordWrapping
         self.descriptionLabel.textAlignment = .center
         self.descriptionLabel.font = UIFont.systemFont(ofSize: 36.0)
         self.descriptionLabel.textColor = .white
+        self.descriptionLabel.adjustsFontSizeToFitWidth = true
+        self.descriptionLabel.minimumScaleFactor = 0.5
         
         self.view.addSubview(imageView)
         self.view.addSubview(logoImageView)
@@ -112,12 +116,17 @@ class ForumHeaderViewController: UIViewController {
                                                                     toViewController:nil,
                                                                     for: .pushPop);
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if let nc = self.navigationController {
             nc.navigationBar.transparentNavigationBar()
         }
     }
 }
+
 
 extension ForumHeaderViewController: RZTransitionInteractionControllerDelegate {
     

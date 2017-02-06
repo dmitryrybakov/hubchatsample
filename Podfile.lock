@@ -17,7 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.3)
   - AlamofireImage (~> 3.2)
-  - MWPhotoBrowser
+  - MWPhotoBrowser (~> 2.1.2)
   - RZTransitions (~> 1.2.1)
   - SnapKit (~> 3.1.2)
 
