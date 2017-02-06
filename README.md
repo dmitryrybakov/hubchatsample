@@ -11,6 +11,7 @@ This is a coding test task.
 ## Installation
 
 Before running this app from the xCode please execute pod install to synchronize cocoapods.
+To run this project please use xCode version 8.2.1 or above.
 
 ## Tests
 
