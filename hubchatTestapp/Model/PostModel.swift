@@ -7,10 +7,22 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct PostModel {
-    let postText: String
-    let imageURLStrings: [String]
-    let upvotes: Float
-    let user: UserModel
+public class PostModel: Mappable {
+    var postText: String?
+    var postImages: [PostImageModel]?
+    var upvotes: Float?
+    var createdByUser: UserModel?
+    
+    public required init?(map: Map){
+        
+    }
+    
+    public func mapping(map: Map) {
+        postText <- map["rawContent"]
+        upvotes <- map["stats.upVotes"]
+        createdByUser <- map["createdBy"]
+        postImages <- map["entities.images"]
+    }
 }

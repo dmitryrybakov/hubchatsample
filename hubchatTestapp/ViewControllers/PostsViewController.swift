@@ -8,28 +8,26 @@
 
 import Foundation
 import UIKit
-import Alamofire
-import AlamofireImage
+import ReactiveSwift
 import MWPhotoBrowser
 
 class PostsViewController: UITableViewController {
     
     static let kPostsTableViewCellIdentifier = "kPostsTableViewCellIdentifier"
-    var imageURLStrings:[String] = []
     
-    var viewModel: ForumViewModelProtocol! {
+    var forumNetworking: ForumNetworking?
+    var viewModel: [PostsViewModelling]? {
         didSet {
-            self.viewModel.dataDidChange = { [unowned self] viewModel in
-                self.tableView.reloadData()
-            }
+            self.tableView.reloadData()
         }
     }
+    
+    var postImageURLs: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewModel.updatePostsInfo()
-        
+        updatePosts()
         //Auto-set the UITableViewCells height (requires iOS8+)
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
@@ -46,15 +44,33 @@ class PostsViewController: UITableViewController {
         }
     }
     
+    func updatePosts() {
+        
+        if let networking = self.forumNetworking {
+            PostsViewModel(forumNetworking: networking).getPostsInfo().observe(on: UIScheduler())
+                .on(value: { models in
+                    self.viewModel = models
+                })
+                .on(failed: { error in
+                    print("Failed \(error.localizedDescription)")
+                })
+                .on(event: { event in
+                    switch event {
+                    case .completed, .failed, .interrupted: break
+                    default:
+                        break
+                    }
+                })
+                .start()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let postData = self.viewModel.postsData {
-            return postData.count
-        }
-        return 0
+        return self.viewModel?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,34 +78,11 @@ class PostsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostsViewController.kPostsTableViewCellIdentifier,
                                                  for: indexPath) as! PostsTableViewCell
         
-        if let postsData = self.viewModel.postsData {
-            if postsData.count > indexPath.row {
-
-                let pd = postsData[indexPath.row]
-                cell.postTextLabel.text = pd.postText
-                cell.userNameLabel.text = pd.user.username
-                cell.upVotesLabel.text = String(pd.upvotes)
-                cell.avatarImageView.image = UIImage(named: "placeholder-image")
-                
-                if !pd.user.avatarURLString.isEmpty {
-                
-                    let imageURLString = pd.user.avatarURLString
-                    
-                    Alamofire.request(imageURLString).responseImage { response in
-                        debugPrint(response.result)
-                        
-                        if let request = response.request {
-                            if request.url?.absoluteString == imageURLString  {
-                                if let image = response.result.value {
-                                    let filter = AspectScaledToFillSizeCircleFilter(size: cell.avatarImageView.bounds.size)
-                                    cell.avatarImageView.image = filter.filter(image)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        guard let postsData = self.viewModel,
+            postsData.count > indexPath.row else {
+            return cell
         }
+        cell.viewModel = postsData[indexPath.row]
         
         return cell
     }
@@ -98,32 +91,36 @@ class PostsViewController: UITableViewController {
         
         self.tableView.deselectRow(at: indexPath, animated: true)
         
-        if let postsData = self.viewModel.postsData {
-            if postsData.count > indexPath.row {
-
-                let pd = postsData[indexPath.row]
-                self.imageURLStrings = pd.imageURLStrings
-
-                let gallery = MWPhotoBrowser()
-                gallery.delegate = self
-                
-                self.navigationController?.pushViewController(gallery, animated: true)
-            }
+        guard let postsData = self.viewModel,
+            postsData.count > indexPath.row else {
+                return
         }
+        
+        let pd = postsData[indexPath.row]
+        self.postImageURLs = pd.postImageURLs
+
+        let gallery = MWPhotoBrowser()
+        gallery.delegate = self
+        
+        self.navigationController?.pushViewController(gallery, animated: true)
     }
 }
 
 extension PostsViewController: MWPhotoBrowserDelegate {
     
     func photoBrowser(_ photoBrowser: MWPhotoBrowser!, photoAt index: UInt) -> MWPhotoProtocol! {
-        if UInt(self.imageURLStrings.count) > index {
-            let photo = MWPhoto(url: URL(string: self.imageURLStrings[Int(index)]))
-            return photo
+        guard let imageURLs = self.postImageURLs,
+            UInt(imageURLs.count) > index else {
+            return MWPhoto()
         }
-        return MWPhoto()
+        let photo = MWPhoto(url: URL(string: imageURLs[Int(index)]))
+        return photo
     }
     
     func numberOfPhotos(in photoBrowser: MWPhotoBrowser!) -> UInt {
-        return UInt(self.imageURLStrings.count)
+        guard let imageURLs = self.postImageURLs else {
+            return 0
+        }
+        return UInt(imageURLs.count)
     }
 }

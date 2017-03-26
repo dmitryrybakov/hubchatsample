@@ -17,6 +17,22 @@ class PostsTableViewCell: UITableViewCell {
     let upVotesLabel = UILabel()
     let postTextLabel = UILabel()
     
+    var viewModel: PostsViewModelling? {
+        didSet {
+            self.postTextLabel.text = viewModel?.postText
+            self.userNameLabel.text = viewModel?.userName
+            self.upVotesLabel.text = String(describing: viewModel?.upvotes)
+            self.avatarImageView.image = UIImage(named: "placeholder-image")
+            
+            if let viewModel = viewModel {
+                viewModel.getAvatarImage(size: self.avatarImageView.bounds.size)
+                    .take(until: self.reactive.prepareForReuse)
+                    .on(value: { self.avatarImageView.image = ($0 ?? UIImage(named: "placeholder-image")) })
+                    .start()
+            }
+        }
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)

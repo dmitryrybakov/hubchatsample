@@ -25,12 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
         
-        let userModel = UserModel(userName: "Avalon", avatarURLString: "http://gooogle.com")
-        let headerModel = ForumHeaderModel(title: "HeaderOne", description: "Title", logoURLString: "http://google.com", imageURLString: "http://google.com")
-        let postModel = PostModel(postText: "", imageURLStrings: [], upvotes: 0.0, user: userModel)
-        let viewModel = ForumViewModel(forumHeader: headerModel, posts: [postModel])
+        let network = ForumNetwork()
+        let forumViewModel = ForumViewModel(forumNetworking: network)
         
-        initialViewController.viewModel = viewModel
+        initialViewController.viewModel = forumViewModel
         
         self.window?.rootViewController = rootNavController
         self.window?.makeKeyAndVisible()

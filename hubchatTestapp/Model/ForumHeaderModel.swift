@@ -7,10 +7,22 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct ForumHeaderModel {
-    let title: String
-    let description: String
-    let logoURLString: String
-    let imageURLString: String
+public class ForumHeaderModel: Mappable {
+    var title: String?
+    var description: String?
+    var logoURLString: String?
+    var imageURLString: String?
+    
+    required public init?(map: Map){
+        
+    }
+    
+    public func mapping(map: Map) {
+        title <- map["title"]
+        description <- map["description"]
+        logoURLString <- map["image.url"]
+        imageURLString <- map["headerImage.url"]
+    }
 }

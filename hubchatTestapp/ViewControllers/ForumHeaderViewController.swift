@@ -11,6 +11,7 @@ import SnapKit
 import Alamofire
 import AlamofireImage
 import RZTransitions
+import ReactiveCocoa
 
 @objc(ForumHeaderViewController)
 class ForumHeaderViewController: UIViewController {
@@ -22,25 +23,17 @@ class ForumHeaderViewController: UIViewController {
     let imageView = UIImageView()
     var pushPopInteractionController: RZTransitionInteractionController?
     
-    var viewModel: ForumViewModelProtocol! {
+    var viewModel: ForumViewModelling! {
         didSet {
             self.viewModel.dataDidChange = { [unowned self] viewModel in
                 
-                if  let forumData = viewModel.forumData {
-                    self.titleLabel.text = forumData.title
-                    self.descriptionLabel.text = forumData.description
-                    
-                    Alamofire.request(forumData.logoURLString).responseImage { response in
-                        debugPrint(response.result)
-                        
-                        if let image = response.result.value {
-                            let filter = AspectScaledToFillSizeCircleFilter(size: self.logoImageView.bounds.size)
-                            self.logoImageView.image = filter.filter(image)
-                        }
-                    }
-                    let imageURL = URL(string: forumData.imageURLString)!
-                    self.imageView.af_setImage(withURL:imageURL)
-                }
+                self.titleLabel.text = viewModel.title
+                self.descriptionLabel.text = viewModel.forumDescription
+                viewModel.getLogoImage(size: self.logoImageView.bounds.size)
+                    .on(value: { self.logoImageView.image = $0 })
+                    .start()
+                //let imageURL = URL(string: viewModel.imageURLString)!
+                //self.imageView.af_setImage(withURL:imageURL)
             }
         }
     }
@@ -132,7 +125,7 @@ extension ForumHeaderViewController: RZTransitionInteractionControllerDelegate {
     
     func nextSimpleViewController() -> UIViewController {
         let newVC = PostsViewController()
-        newVC.viewModel = self.viewModel
+        newVC.viewModel = self.viewModel as! [PostsViewModelling]?
         newVC.transitioningDelegate = RZTransitionsManager.shared()
         return newVC
     }

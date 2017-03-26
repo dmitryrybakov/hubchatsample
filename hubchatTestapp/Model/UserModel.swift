@@ -7,8 +7,18 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct UserModel {
-    let userName: String
-    let avatarURLString: String
+public class UserModel: Mappable {
+    var userName: String?
+    var avatarURLString: String?
+    
+    public required init?(map: Map){
+        
+    }
+    
+    public func mapping(map: Map) {
+        userName <- map["username"]
+        avatarURLString <- map["avatar.url"]
+    }
 }

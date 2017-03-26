@@ -13,7 +13,15 @@
 		F709466E1E478385006CA5DD /* ForumHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709466B1E478385006CA5DD /* ForumHeaderViewController.swift */; };
 		F70946701E4783B6006CA5DD /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709466F1E4783B6006CA5DD /* PostsViewController.swift */; };
 		F70946721E4783CA006CA5DD /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70946711E4783CA006CA5DD /* PostsTableViewCell.swift */; };
+		F70B1A6A1E7C351E00AE9925 /* PostImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B1A691E7C351E00AE9925 /* PostImageModel.swift */; };
 		F7502AC51E485E4D00ABDF6C /* hubchatTestappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7502AC41E485E4D00ABDF6C /* hubchatTestappTests.swift */; };
+		F7748C6D1E85749A00A4CFD3 /* ForumNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7748C6C1E85749A00A4CFD3 /* ForumNetworking.swift */; };
+		F7748C701E857B5700A4CFD3 /* ForumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7748C6F1E857B5700A4CFD3 /* ForumNetwork.swift */; };
+		F7748C721E857C6D00A4CFD3 /* ServerEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7748C711E857C6D00A4CFD3 /* ServerEndpoint.swift */; };
+		F7748C741E857EC300A4CFD3 /* ForumViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7748C731E857EC300A4CFD3 /* ForumViewModelling.swift */; };
+		F7748C761E8580EB00A4CFD3 /* PostsViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7748C751E8580EB00A4CFD3 /* PostsViewModelling.swift */; };
+		F7748C781E8580FD00A4CFD3 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7748C771E8580FD00A4CFD3 /* PostsViewModel.swift */; };
+		F7748C7A1E86DE1500A4CFD3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7748C791E86DE1500A4CFD3 /* NetworkError.swift */; };
 		F7AA84601E451AB800D593DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA845F1E451AB800D593DC /* AppDelegate.swift */; };
 		F7AA84671E451AB800D593DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7AA84661E451AB800D593DC /* Assets.xcassets */; };
 		F7AA846A1E451AB800D593DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AA84681E451AB800D593DC /* LaunchScreen.storyboard */; };
@@ -42,9 +50,17 @@
 		F709466B1E478385006CA5DD /* ForumHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumHeaderViewController.swift; sourceTree = "<group>"; };
 		F709466F1E4783B6006CA5DD /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		F70946711E4783CA006CA5DD /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		F70B1A691E7C351E00AE9925 /* PostImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageModel.swift; sourceTree = "<group>"; };
 		F7502AC21E485E4D00ABDF6C /* hubchatTestappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hubchatTestappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7502AC41E485E4D00ABDF6C /* hubchatTestappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hubchatTestappTests.swift; sourceTree = "<group>"; };
 		F7502AC61E485E4D00ABDF6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7748C6C1E85749A00A4CFD3 /* ForumNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForumNetworking.swift; path = Networking/ForumNetworking.swift; sourceTree = "<group>"; };
+		F7748C6F1E857B5700A4CFD3 /* ForumNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForumNetwork.swift; path = Networking/ForumNetwork.swift; sourceTree = "<group>"; };
+		F7748C711E857C6D00A4CFD3 /* ServerEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerEndpoint.swift; path = Networking/ServerEndpoint.swift; sourceTree = "<group>"; };
+		F7748C731E857EC300A4CFD3 /* ForumViewModelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumViewModelling.swift; sourceTree = "<group>"; };
+		F7748C751E8580EB00A4CFD3 /* PostsViewModelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewModelling.swift; sourceTree = "<group>"; };
+		F7748C771E8580FD00A4CFD3 /* PostsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		F7748C791E86DE1500A4CFD3 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = Networking/NetworkError.swift; sourceTree = "<group>"; };
 		F7AA845C1E451AB800D593DC /* hubchatTestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hubchatTestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AA845F1E451AB800D593DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7AA84661E451AB800D593DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +128,17 @@
 			path = hubchatTestappTests;
 			sourceTree = "<group>";
 		};
+		F7748C6E1E85799000A4CFD3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F7748C791E86DE1500A4CFD3 /* NetworkError.swift */,
+				F7748C6C1E85749A00A4CFD3 /* ForumNetworking.swift */,
+				F7748C6F1E857B5700A4CFD3 /* ForumNetwork.swift */,
+				F7748C711E857C6D00A4CFD3 /* ServerEndpoint.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		F7AA84531E451AB800D593DC = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F70946671E478385006CA5DD /* UtilsExtensions */,
+				F7748C6E1E85799000A4CFD3 /* Networking */,
 				F7AA84771E452CA100D593DC /* Model */,
 				F7AA84801E45360200D593DC /* ViewModel */,
 				F709466A1E478385006CA5DD /* ViewControllers */,
@@ -153,6 +181,7 @@
 				F7AA84781E452CA100D593DC /* ForumHeaderModel.swift */,
 				F7AA84791E452CA100D593DC /* PostModel.swift */,
 				F7AA847A1E452CA100D593DC /* UserModel.swift */,
+				F70B1A691E7C351E00AE9925 /* PostImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,7 +189,10 @@
 		F7AA84801E45360200D593DC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F7748C731E857EC300A4CFD3 /* ForumViewModelling.swift */,
 				F7AA84811E45360200D593DC /* ForumViewModel.swift */,
+				F7748C751E8580EB00A4CFD3 /* PostsViewModelling.swift */,
+				F7748C771E8580FD00A4CFD3 /* PostsViewModel.swift */,
 			);
 			name = ViewModel;
 			path = hubchatTestapp/ViewModel;
@@ -337,14 +369,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7748C781E8580FD00A4CFD3 /* PostsViewModel.swift in Sources */,
 				F7AA84821E45360200D593DC /* ForumViewModel.swift in Sources */,
+				F7748C721E857C6D00A4CFD3 /* ServerEndpoint.swift in Sources */,
+				F7748C6D1E85749A00A4CFD3 /* ForumNetworking.swift in Sources */,
+				F7748C761E8580EB00A4CFD3 /* PostsViewModelling.swift in Sources */,
 				F7AA847C1E452CA100D593DC /* PostModel.swift in Sources */,
 				F7AA84601E451AB800D593DC /* AppDelegate.swift in Sources */,
 				F70946701E4783B6006CA5DD /* PostsViewController.swift in Sources */,
 				F709466E1E478385006CA5DD /* ForumHeaderViewController.swift in Sources */,
+				F7748C741E857EC300A4CFD3 /* ForumViewModelling.swift in Sources */,
 				F7AA847D1E452CA100D593DC /* UserModel.swift in Sources */,
 				F7AA847B1E452CA100D593DC /* ForumHeaderModel.swift in Sources */,
 				F70946721E4783CA006CA5DD /* PostsTableViewCell.swift in Sources */,
+				F70B1A6A1E7C351E00AE9925 /* PostImageModel.swift in Sources */,
+				F7748C701E857B5700A4CFD3 /* ForumNetwork.swift in Sources */,
+				F7748C7A1E86DE1500A4CFD3 /* NetworkError.swift in Sources */,
 				F709466C1E478385006CA5DD /* DictionaryDeeplyNestedExtension.swift in Sources */,
 				F709466D1E478385006CA5DD /* TranslucentNavBarExtension.swift in Sources */,
 			);
@@ -533,6 +573,7 @@
 				F7502ACB1E485E4D00ABDF6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7AA84571E451AB800D593DC /* Build configuration list for PBXProject "hubchatTestapp" */ = {
 			isa = XCConfigurationList;
